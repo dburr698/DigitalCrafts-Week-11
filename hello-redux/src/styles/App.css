@@ -1,0 +1,17 @@
+body{
+  background-color: blue;
+}
+
+.counterChangers{
+  display: flex;
+  justify-content: space-between;
+}
+
+.pageTitle{
+  text-align: center;
+}
+
+.count{
+  display: flex;
+  align-items: center;
+}
