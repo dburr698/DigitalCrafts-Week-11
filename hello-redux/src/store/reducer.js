@@ -1,4 +1,4 @@
-
+import * as actionType from '../store/actions/actionTypes'
 
 const initialState = {
     counter: 0
@@ -6,29 +6,32 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
 
-    if(action.type == 'INCREMENT') {
-        return{
-            ...state,
-            counter: state.counter + 1
-        }
-    } else if(action.type == 'DECREMENT') {
-        return{
-            ...state,
-            counter: state.counter - 1
-        } 
-    } else if (action.type == 'ADD') {
-        return{
-            ...state,
-            counter: state.counter + action.payload
-        }
-    } else if (action.type == 'SUBTRACT') {
-        return{
-            ...state,
-            counter: state.counter - action.payload
-        }
+    switch(action.type) {
+        case actionType.INCREMENT:
+            return{
+                ...state,
+                counter: state.counter + 1
+            }
+        case actionType.DECREMENT:
+            return{
+                ...state,
+                counter: state.counter - 1
+            } 
+        case actionType.ADD:
+            return{
+                ...state,
+                counter: state.counter + action.payload
+            }
+        case actionType.SUBTRACT:
+            return{
+                ...state,
+                counter: state.counter - action.payload
+            }
+        default:
+            return state
     }
 
-    return state
+    
 }
 
 export default reducer

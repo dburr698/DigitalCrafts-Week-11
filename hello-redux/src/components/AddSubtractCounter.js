@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { connect } from "react-redux"
 import '../styles/Counter.css'
+import * as actionType from '../store/actions/actionTypes'
 
 function AddSubtractCounter(props) {
 
@@ -38,8 +39,8 @@ function AddSubtractCounter(props) {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onAdd: (value) => dispatch({ type: 'ADD', payload: value }),
-        onSubtract: (value) => dispatch({ type: 'SUBTRACT', payload: value })
+        onAdd: (value) => dispatch({ type: actionType.ADD, payload: value }),
+        onSubtract: (value) => dispatch({ type: actionType.SUBTRACT, payload: value })
     }
 }
 
