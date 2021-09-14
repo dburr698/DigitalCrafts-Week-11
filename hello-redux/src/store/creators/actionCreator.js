@@ -26,3 +26,10 @@ export const subtractCounter = (value) => {
         payload: value
     }
 }
+
+export const addTask = (task) => {
+    return{
+        type: actionType.ADDTASK,
+        payload: task
+    }
+}

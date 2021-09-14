@@ -1,10 +1,9 @@
-import * as actionType from '../store/actions/actionTypes'
 
 const initialState = {
-    counter: 0
+    counter: 0,
 }
 
-const reducer = (state = initialState, action) => {
+const counterReducer = (state = initialState, action) => {
 
     switch(action.type) {
         case actionType.INCREMENT:
@@ -34,4 +33,4 @@ const reducer = (state = initialState, action) => {
     
 }
 
-export default reducer
+export default counterReducer

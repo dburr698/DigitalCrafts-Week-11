@@ -3,6 +3,7 @@ import AddSubtractCounter from "./AddSubtractCounter"
 import DisplayCounter from "./DisplayCounter"
 import IncrementDecrementCounter from "./IncrementDecrementCounter"
 import '../styles/App.css'
+import ToDoList from "./ToDoList"
 
 
 function App(props) {
@@ -18,6 +19,9 @@ function App(props) {
       </div>
       <div className="counterDisplay">
         <DisplayCounter />
+      </div>
+      <div className="todoList">
+        <ToDoList />
       </div>
     </div>
 
