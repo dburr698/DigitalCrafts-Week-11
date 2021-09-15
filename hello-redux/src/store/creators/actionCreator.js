@@ -33,3 +33,10 @@ export const addTask = (task) => {
         payload: task
     }
 }
+
+export const randomImg = (url) => {
+    return{
+        type: actionType.RANDOMIMG,
+        payload: url
+    }
+}

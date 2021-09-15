@@ -4,6 +4,7 @@ import DisplayCounter from "./DisplayCounter"
 import IncrementDecrementCounter from "./IncrementDecrementCounter"
 import '../styles/App.css'
 import ToDoList from "./ToDoList"
+import RandomImage from "./RandomImage"
 
 
 function App(props) {
@@ -22,6 +23,9 @@ function App(props) {
       </div>
       <div className="todoList">
         <ToDoList />
+      </div>
+      <div className="randomImages">
+        <RandomImage />
       </div>
     </div>
 

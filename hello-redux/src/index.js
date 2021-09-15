@@ -6,10 +6,12 @@ import { createStore, combineReducers} from 'redux'
 import { Provider } from 'react-redux'
 import counterReducer from './store/reducers/counterReducer';
 import taskReducer from './store/reducers/taskReducer';
+import randomImageReducer from './store/reducers/randomImageReducer';
 
 const reducer = combineReducers({
   countRed: counterReducer,
-  taskRed: taskReducer
+  taskRed: taskReducer,
+  randoImgRed: randomImageReducer
 })
 
 const store = createStore(

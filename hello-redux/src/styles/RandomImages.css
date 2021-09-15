@@ -1,0 +1,10 @@
+.randomImages{
+    background-color: orange;
+    
+}
+
+.imgUL{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
