@@ -4,8 +4,6 @@ import * as actionCreator from '../stores/creators/actionCreators'
 
 function MovieList(props) {
 
-
-
     const handleFavoritesButton = (movie) => {
         props.onAddFavorite(movie)
     }

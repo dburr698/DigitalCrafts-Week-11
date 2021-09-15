@@ -1,17 +1,16 @@
-import { Component } from "react";
 import Menu from "./Menu";
 
 
-class BaseLayout extends Component {
-    render() {
-        return(
-            <div>
-                <Menu />
-                {this.props.children}
+function BaseLayout(props) {
 
-            </div>
-        )
-    }
+    return (
+        <div>
+            <Menu />
+            {props.children}
+
+        </div>
+    )
+
 }
 
 export default BaseLayout
