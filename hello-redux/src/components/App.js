@@ -31,7 +31,7 @@ function App(props) {
 
 const mapStateToProps = (state) => {
   return{
-    counter: state.counter
+    counter: state.countRed.counter
   }
 }
 

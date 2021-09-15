@@ -1,0 +1,27 @@
+.todoList {
+    background-color: orange;
+    margin-left: auto;
+    width: 35%;
+    margin-right: auto;
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.addTask{
+    display: flex;
+    
+
+}
+
+.addTask button{
+    margin-left: 5px;
+}
+
+.taskUL{
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+}
