@@ -10,7 +10,7 @@ const FetchMoviesReducer = (state=initialState, action) => {
         case actionType.FETCH_MOVIES:
             return{
                 ...state,
-                movies: state.movies.push(action.payload)
+                movies: action.payload
             }
         default:
             return state
