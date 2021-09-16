@@ -40,3 +40,15 @@ export const randomImg = (url) => {
         payload: url
     }
 }
+
+export const fetchPosts = () => {
+
+    return async (dispatch) => {
+        let response = await fetch('https://jsonplaceholder.typicode.com/posts')
+        let posts = await response.json()
+        dispatch({
+            type: actionType.FETCH_POSTS,
+            payload: posts
+        })
+    }
+}

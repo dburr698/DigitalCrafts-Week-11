@@ -5,6 +5,7 @@ import IncrementDecrementCounter from "./IncrementDecrementCounter"
 import '../styles/App.css'
 import ToDoList from "./ToDoList"
 import RandomImage from "./RandomImage"
+import Posts from "./Posts"
 
 
 function App(props) {
@@ -26,6 +27,9 @@ function App(props) {
       </div>
       <div className="randomImages">
         <RandomImage />
+      </div>
+      <div>
+        <Posts/>
       </div>
     </div>
 

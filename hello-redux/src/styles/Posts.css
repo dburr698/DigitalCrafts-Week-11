@@ -1,0 +1,10 @@
+.posts {
+    background-color: orange;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.postsUL {
+    list-style: none;
+}
