@@ -11,7 +11,7 @@ function MovieList(props) {
     const handleDeleteButton = (movieID) => {
         const body = {movieId: movieID}
 
-        fetch('http://localhost:8080/api/delete', {
+        fetch('http://localhost:8080/api/delete-movie', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -20,7 +20,7 @@ function MovieList(props) {
         }) .then(response => response.json())
         .then(result => { console.log(result)
             if(result.success) {
-               // callback function passed by parent components
+               // callback function passed by parent component
                props.onDelete()
             }
         })
@@ -32,7 +32,7 @@ function MovieList(props) {
             <a href='/details'><img className="poster" src={movie.poster} alt="Poster" /></a>
             <h3>{movie.title} - {movie.year}</h3>
             <p>{movie.director}</p>
-            <button>Update</button>
+            <button>Update - not functional</button>
             <button onClick={() => handleDeleteButton(movie.id)}>Delete</button>
             <button onClick={() => handleFavoritesButton(movie)}>Add to Favorites</button>
         </li>
