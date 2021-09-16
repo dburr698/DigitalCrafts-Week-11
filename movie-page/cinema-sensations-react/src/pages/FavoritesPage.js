@@ -1,13 +1,15 @@
 import { connect } from "react-redux"
 import "../styles/MovieList.css"
+import * as actionCreator from '../stores/creators/actionCreators'
 
 function FavoritesPage(props) {
 
-    const favoriteItems = props.favorites.map((movie) => {
+    const favoriteItems = props.favorites.map((movie, index) => {
         return <li className="movieLI" key={movie.id}>
             <img className="poster" src={movie.poster} alt="Poster" />
             <h3>{movie.title} - {movie.year}</h3>
             <p>{movie.director}</p>
+            <button onClick={() => props.onRemoveFavorite(index)}>Unfavorite</button>
         </li>
     })
 
@@ -27,4 +29,10 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(FavoritesPage)
+const mapDispatchToProps = (dispatch) => {
+    return{
+        onRemoveFavorite: (movie) => dispatch(actionCreator.removeFromFavorite(movie))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FavoritesPage)

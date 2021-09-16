@@ -12,6 +12,12 @@ const FavoriteMoviesReducer = (state=initialState, action) => {
                 ...state,
                 favorites: state.favorites.concat(action.payload)
             }
+
+        case actionType.REMOVE_FAVORITE:
+            return{
+                ...state,
+                favorites: state.favorites.filter((favorite, index) => index != action.payload)
+            }
     
         default:
             return state

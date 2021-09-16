@@ -6,7 +6,7 @@ function Menu() {
 
     return (
         <div className="menu">
-            <NavLink className="link" to='/browse-movies'>Browse</NavLink>
+            <NavLink className="link" to='/'>Browse</NavLink>
             <NavLink className="link" to='/favorites'>Favorites</NavLink>
             <NavLink className="link" to='/add-movie'>Add Movie</NavLink>
             <NavLink className="link" to='/login'>Login</NavLink>

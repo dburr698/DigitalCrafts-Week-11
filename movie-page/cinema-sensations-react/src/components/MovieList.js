@@ -13,6 +13,8 @@ function MovieList(props) {
             <img className="poster" src={movie.poster} alt="Poster" />
             <h3>{movie.title} - {movie.year}</h3>
             <p>{movie.director}</p>
+            <button>Update</button>
+            <button>Delete</button>
             <button onClick={() => handleFavoritesButton(movie)}>Add to Favorites</button>
         </li>
     })

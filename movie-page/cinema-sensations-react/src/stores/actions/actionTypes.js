@@ -1,3 +1,4 @@
 
 export const ADD_FAVORITE = 'ADD_FAVORITE'
 export const FETCH_MOVIES = 'FETCH_MOVIES'
+export const REMOVE_FAVORITE = 'REMOVE_FAVORITE'

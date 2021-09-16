@@ -8,6 +8,13 @@ export const addToFavorites = (movie) => {
     }
 }
 
+export const removeFromFavorite = (movie) => {
+    return {
+        type: actionType.REMOVE_FAVORITE,
+        payload: movie
+    }
+}
+
 export const fetchMovies = () => {
 
     return async (dispatch) => {

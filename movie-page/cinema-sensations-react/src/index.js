@@ -31,7 +31,7 @@ ReactDOM.render(
       <BrowserRouter>
         <BaseLayout>
           <Switch>
-            <Route path='/browse-movies' component={BrowseMovies} />
+            <Route exact path='/' component={BrowseMovies} />
             <Route path='/add-movie' component={AddMoviePage} />
             <Route path='/login' component={LoginPage} />
             <Route path='/register' component={RegistrationPage} />

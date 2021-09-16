@@ -22,7 +22,7 @@ function AddMoviePage(props) {
         }).then(response => response.json())
             .then(result => {
                 if (result.success) {
-                    props.history.push('/browse-movies')
+                    props.history.push('/')
                 }
             })
     }
