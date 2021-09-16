@@ -101,7 +101,7 @@ app.post('/api/login', async (req, res) => {
 
 })
 
-app.post('/api/delete', async (req, res) => {
+app.post('/api/delete-movie', async (req, res) => {
 
     let movieId = parseInt(req.body.movieId)
 
