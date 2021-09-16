@@ -101,6 +101,20 @@ app.post('/api/login', async (req, res) => {
 
 })
 
+app.post('/api/delete', async (req, res) => {
+
+    let movieId = parseInt(req.body.movieId)
+
+    let result = await models.Movie.destroy({
+        where: {
+            id: movieId
+        }
+    })
+
+    res.json({success: true})
+})
+
+
 app.listen(8080, () => {
     console.log('Server is running... you better go catch it')
 })

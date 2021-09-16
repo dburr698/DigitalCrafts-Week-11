@@ -14,6 +14,7 @@ import FavoritesPage from './pages/FavoritesPage';
 import thunk from 'redux-thunk'
 import FetchMoviesReducer from './stores/reducers/fetchMoviesReducer';
 import FavoriteMoviesReducer from './stores/reducers/favoriteMoviesReducer';
+import MovieDetailsPage from './pages/MovieDetailsPage';
 
 const reducer = combineReducers({
   fetchRed: FetchMoviesReducer,
@@ -36,6 +37,7 @@ ReactDOM.render(
             <Route path='/login' component={LoginPage} />
             <Route path='/register' component={RegistrationPage} />
             <Route path='/favorites' component={FavoritesPage} />
+            <Route path='/details' component={MovieDetailsPage} />
           </Switch>
         </BaseLayout>
       </BrowserRouter>

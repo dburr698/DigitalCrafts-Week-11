@@ -9,11 +9,14 @@ function BrowseMovies(props) {
         props.onFetchMovies()
     }, [])
 
-    
+    const handleDelete = () => {
+        props.onFetchMovies() 
+    }
+
         return(
             <div>
                 <h1>Browse Movies</h1>
-                <MovieList />
+                <MovieList onDelete = {handleDelete}/>
             </div>
         )
     
