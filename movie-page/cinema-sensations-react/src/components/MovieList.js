@@ -8,12 +8,12 @@ function MovieList(props) {
         props.onAddFavorite(movie)
     }
 
-    const movieItems = props.allMovies.map((movie, index) => {
-        return <li className="movieLI" key={index}>
-            <img className="poster" src={movie.posterURL} alt="Poster" />
+    const movieItems = props.movies.map((movie) => {
+        return <li className="movieLI" key={movie.id}>
+            <img className="poster" src={movie.poster} alt="Poster" />
             <h3>{movie.title} - {movie.year}</h3>
             <p>{movie.director}</p>
-            <button value={movie.title} onClick={() => handleFavoritesButton(movie)}>Add to Favorites</button>
+            <button onClick={() => handleFavoritesButton(movie)}>Add to Favorites</button>
         </li>
     })
 
@@ -27,7 +27,7 @@ function MovieList(props) {
 
 const mapStateToProps = (state) => {
     return{
-        favorite: state.favorite
+        movies: state.fetchRed.movies
     }
 }
 

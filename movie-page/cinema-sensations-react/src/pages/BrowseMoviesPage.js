@@ -1,34 +1,29 @@
-import { Component } from "react"
+import { useEffect } from "react"
+import { connect } from "react-redux"
 import MovieList from "../components/MovieList"
+import * as actionCreator from '../stores/creators/actionCreators'
 
+function BrowseMovies(props) {
 
-class BrowseMovies extends Component {
+    useEffect(() => {
+        props.onFetchMovies()
+    }, [])
 
-    constructor() {
-        super()
-        this.state = {
-            movies: []
-        }
-    }
-
-    componentDidMount() {
-        fetch("http://localhost:8080/api/movies")
-        .then(response => response.json())
-        .then(movies => {
-            this.setState({
-                movies: movies
-            })
-        })
-    }
-
-    render() {
+    
         return(
             <div>
                 <h1>Browse Movies</h1>
-                <MovieList allMovies={this.state.movies} />
+                <MovieList />
             </div>
         )
+    
+}
+
+
+const mapDispatchToProps = (dispatch) => {
+    return{
+        onFetchMovies: () => dispatch(actionCreator.fetchMovies())
     }
 }
 
-export default BrowseMovies
+export default connect(null, mapDispatchToProps)(BrowseMovies)

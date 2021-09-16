@@ -31,7 +31,7 @@ app.post('/api/movies', async (req, res) => {
         genre: genre, 
         director: director, 
         year: year, 
-        posterURL: poster
+        poster: poster
     })
 
     let savedMovie = await movie.save()

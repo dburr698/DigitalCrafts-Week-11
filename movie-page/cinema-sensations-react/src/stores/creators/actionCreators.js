@@ -2,8 +2,22 @@
 import * as actionType from '../actions/actionTypes'
 
 export const addToFavorites = (movie) => {
-    return{
+    return {
         type: actionType.ADD_FAVORITE,
         payload: movie
     }
+}
+
+export const fetchMovies = () => {
+
+    return async (dispatch) => {
+        let response = await fetch("http://localhost:8080/api/movies")
+        let movies = await response.json()
+        dispatch({
+            type: actionType.FETCH_MOVIES,
+            payload: movies
+        })
+
+    }
+
 }

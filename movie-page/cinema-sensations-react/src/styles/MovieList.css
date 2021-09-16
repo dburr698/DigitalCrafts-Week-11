@@ -1,6 +1,7 @@
 .movieUL {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .poster {
@@ -9,4 +10,9 @@
 
 .movieLI {
     margin: 10px;
+    background-color: cornflowerblue;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

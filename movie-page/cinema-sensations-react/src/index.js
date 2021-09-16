@@ -4,17 +4,26 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import BaseLayout from './components/BaseLayout';
-import HomePage from './pages/HomePage';
 import BrowseMovies from './pages/BrowseMoviesPage';
 import AddMoviePage from './pages/AddMoviePage';
 import LoginPage from './pages/LoginPage';
 import RegistrationPage from './pages/RegistrationPage';
-import { createStore } from 'redux'
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
 import { Provider } from 'react-redux'
-import reducer from './stores/reducer';
 import FavoritesPage from './pages/FavoritesPage';
+import thunk from 'redux-thunk'
+import FetchMoviesReducer from './stores/reducers/fetchMoviesReducer';
+import FavoriteMoviesReducer from './stores/reducers/favoriteMoviesReducer';
 
-const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const reducer = combineReducers({
+  fetchRed: FetchMoviesReducer,
+  favRed: FavoriteMoviesReducer
+})
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(reducer, /* preloadedState, */ composeEnhancers(
+    applyMiddleware(thunk)
+  ));
 
 ReactDOM.render(
   <React.StrictMode>
@@ -22,7 +31,6 @@ ReactDOM.render(
       <BrowserRouter>
         <BaseLayout>
           <Switch>
-            <Route exact path='/' component={HomePage} />
             <Route path='/browse-movies' component={BrowseMovies} />
             <Route path='/add-movie' component={AddMoviePage} />
             <Route path='/login' component={LoginPage} />
